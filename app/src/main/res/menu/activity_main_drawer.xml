@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/nav_home" />
+        <item
+            android:id="@+id/nav_anamnesis"
+            android:title="@string/nav_anamnesis" />
+        <item
+            android:id="@+id/nav_caretaking"
+            android:title="@string/nav_caretaking" />
+        <item
+            android:id="@+id/nav_logs"
+            android:title="@string/nav_logs" />
+        <item
+            android:id="@+id/nav_medication"
+            android:title="@string/nav_medication" />
+        <item
+            android:id="@+id/nav_appointments"
+            android:title="@string/nav_appointments" />
+        <item
+            android:id="@+id/nav_recorder"
+            android:title="@string/nav_recorder" />
+    </group>
+
+</menu>
