@@ -20,7 +20,8 @@
     <string name="frag_medication_title">Medication</string>
     <string name="frag_appointments_title">Appointments</string>
     <string name="frag_recorder_title">Recording</string>
-    <string name="log_1_title">Arms surgery</string>
-    <string name="log_1_content">Surgery went well......</string>
+    <string name="log_1_title">Example log title</string>
+    <string name="log_1_content">Example log description</string>
+    <string name="logs_1_date">13 maart 2019 (example date)</string>
 
 </resources>

@@ -57,20 +57,24 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/log_1_title"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/logs_1_date"
+                    />
+
                 <EditText
-                    android:id="@+id/editText2"
+                    android:id="@+id/log1_content"
+                    style="@style/Base.Widget.MaterialComponents.TextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/log_1_content"
-                    android:inputType="none"
-                    android:focusable="false"
-                    />
+                    android:textSize="14sp" />
 
             </LinearLayout>
 

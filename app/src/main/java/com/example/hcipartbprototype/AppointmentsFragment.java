@@ -69,7 +69,6 @@ public class AppointmentsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         mCalendarView = (CalendarView) view.findViewById(R.id.calendarView);
         dateLabel = (TextView) view.findViewById(R.id.dateLabel);
-
         dateLabel.setText(OUTPUT_FORMAT.format(mCalendarView.getDate()));
         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override

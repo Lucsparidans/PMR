@@ -11,10 +11,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,6 +38,11 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, "TOBE IMPLEMENTED, this will let you edit all entries", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                List<Fragment> fragments = getSupportFragmentManager().getFragments();
+                if(fragments != null){
+                    EditText editText = (EditText)findViewById(R.id.log1_content);
+                    editText.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+                }
             }
         });
 
