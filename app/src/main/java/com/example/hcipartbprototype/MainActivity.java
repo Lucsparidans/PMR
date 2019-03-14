@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "MainActivity";
+
+    private boolean edit = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +44,23 @@ public class MainActivity extends AppCompatActivity
                 List<Fragment> fragments = getSupportFragmentManager().getFragments();
                 if(fragments != null){
                     EditText editText = (EditText)findViewById(R.id.log1_content);
-                    editText.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+                    if(!edit) {
+                        editText.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+                        edit = true;
+                    }
+                    else{
+                        editText.setInputType(InputType.TYPE_NULL);
+                        edit = false;
+                    }
                 }
+            }
+        });
+
+        TextView dateLabel = (TextView) findViewById(R.id.log1_date);
+        dateLabel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 
