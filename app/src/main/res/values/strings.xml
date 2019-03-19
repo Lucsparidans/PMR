@@ -24,4 +24,7 @@
     <string name="log_1_content">Example log description</string>
     <string name="logs_1_date">13 maart 2019 (example date)</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.example.hcipartbprototype;
+package com.example.hcipartbprototype.Fragments.Screens;
 
 
 import android.os.Bundle;
@@ -7,13 +7,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.hcipartbprototype.LogEntry;
+import com.example.hcipartbprototype.R;
+
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MedicationFragment#newInstance} factory method to
+ * Use the {@link LogsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MedicationFragment extends Fragment {
+public class LogsFragment extends Fragment {
+    public static final String TAG = "LogsFragment";
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -22,9 +28,9 @@ public class MedicationFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private ArrayList<LogEntry> logs;
 
-
-    public MedicationFragment() {
+    public LogsFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +40,11 @@ public class MedicationFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MedicationFragment.
+     * @return A new instance of fragment LogsFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static MedicationFragment newInstance(String param1, String param2) {
-        MedicationFragment fragment = new MedicationFragment();
+    public static LogsFragment newInstance(String param1, String param2) {
+        LogsFragment fragment = new LogsFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -53,13 +59,16 @@ public class MedicationFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_medication, container, false);
+        return inflater.inflate(R.layout.fragment_logs, container, false);
     }
+
 
 }

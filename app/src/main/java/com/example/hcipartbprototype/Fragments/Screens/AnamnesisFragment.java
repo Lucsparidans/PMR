@@ -1,27 +1,21 @@
-package com.example.hcipartbprototype;
+package com.example.hcipartbprototype.Fragments.Screens;
 
 
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
-import java.util.ArrayList;
+import com.example.hcipartbprototype.R;
 
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link LogsFragment#newInstance} factory method to
+ * Use the {@link AnamnesisFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class LogsFragment extends Fragment {
-    public static final String TAG = "LogsFragment";
+public class AnamnesisFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,9 +24,9 @@ public class LogsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private ArrayList<LogEntry> logs;
 
-    public LogsFragment() {
+
+    public AnamnesisFragment() {
         // Required empty public constructor
     }
 
@@ -42,11 +36,11 @@ public class LogsFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment LogsFragment.
+     * @return A new instance of fragment AnamnesisFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static LogsFragment newInstance(String param1, String param2) {
-        LogsFragment fragment = new LogsFragment();
+    public static AnamnesisFragment newInstance(String param1, String param2) {
+        AnamnesisFragment fragment = new AnamnesisFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,22 +55,13 @@ public class LogsFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_logs, container, false);
+        return inflater.inflate(R.layout.fragment_anamnesis, container, false);
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        logs = new ArrayList<>();
-        Resources res = getResources();
-        logs.add(new LogEntry(res.getString(R.string.logs_1_date),res.getString(R.string.log_1_title),res.getString(R.string.log_1_content)));
-        ((EditText)view.findViewById(R.id.log1_content)).setInputType(InputType.TYPE_NULL);
-    }
 }

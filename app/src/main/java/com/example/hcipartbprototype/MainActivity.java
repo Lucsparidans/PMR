@@ -1,5 +1,6 @@
 package com.example.hcipartbprototype;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -16,8 +17,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.hcipartbprototype.Fragments.Screens.AnamnesisFragment;
+import com.example.hcipartbprototype.Fragments.Screens.AppointmentsFragment;
+import com.example.hcipartbprototype.Fragments.Screens.CaretakingFragment;
+import com.example.hcipartbprototype.Fragments.Screens.HomeFragment;
+import com.example.hcipartbprototype.Fragments.Screens.LogsContainerFragment;
+import com.example.hcipartbprototype.Fragments.Screens.LogsFragment;
+import com.example.hcipartbprototype.Fragments.Screens.MedicationFragment;
+import com.example.hcipartbprototype.Fragments.Screens.RecorderFragment;
+
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, LogsContainerFragment.OnFragmentInteractionListener {
 
     private static final String TAG = "MainActivity";
 
@@ -49,7 +59,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction()
-                .replace(R.id.viewport,HomeFragment.newInstance(null,null))
+                .replace(R.id.viewport, HomeFragment.newInstance(null,null))
                 .addToBackStack(null);
         fragmentTransaction.commit();
 
@@ -128,4 +138,8 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }

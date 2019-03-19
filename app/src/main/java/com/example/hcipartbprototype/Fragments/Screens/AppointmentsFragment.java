@@ -1,4 +1,4 @@
-package com.example.hcipartbprototype;
+package com.example.hcipartbprototype.Fragments.Screens;
 
 
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CalendarView;
 import android.widget.TextView;
+
+import com.example.hcipartbprototype.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -31,8 +33,8 @@ public class AppointmentsFragment extends Fragment {
     private String mParam2;
     private CalendarView mCalendarView;
     private TextView dateLabel;
-    private final SimpleDateFormat OUTPUT_FORMAT = new SimpleDateFormat("dd MMMM yyyy");
-    private final SimpleDateFormat INPUT_FORMAT = new SimpleDateFormat("dd MM yyyy");
+    public static final SimpleDateFormat OUTPUT_FORMAT = new SimpleDateFormat("dd MMMM yyyy");
+    public static final SimpleDateFormat INPUT_FORMAT = new SimpleDateFormat("dd MM yyyy");
 
     public AppointmentsFragment() {
         // Required empty public constructor
