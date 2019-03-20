@@ -22,22 +22,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/log_1_title"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/log_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/logs_1_date" />
+                android:text="@string/logs_1_date"
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/edit_query"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:importantForAutofill="no"
                 android:inputType="none"
                 android:text="@string/log_1_content"
-                android:textSize="14sp" />
+                android:textSize="18sp"
+                android:autofillHints="" />
 
         </LinearLayout>
 

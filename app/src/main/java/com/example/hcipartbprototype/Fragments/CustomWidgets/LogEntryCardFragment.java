@@ -11,10 +11,14 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.hcipartbprototype.Fragments.Screens.LogsFragment;
 import com.example.hcipartbprototype.LogEntry;
 import com.example.hcipartbprototype.R;
 
 import java.util.Date;
+
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 public class LogEntryCardFragment extends Fragment {
     private EditText inputBox;
@@ -22,6 +26,7 @@ public class LogEntryCardFragment extends Fragment {
     private LogEntry data;
     private static int logID = 0;
     private int id;
+    private NavController navController;
     public LogEntryCardFragment() {
     }
     public static LogEntryCardFragment newInstance() {
@@ -53,6 +58,15 @@ public class LogEntryCardFragment extends Fragment {
         dateLabel = view.findViewById(R.id.log_date);
         inputBox.setInputType(InputType.TYPE_NULL);
         dateLabel.setText(data.getDate());
+
+        navController = Navigation.findNavController(getActivity(),R.id.logs_navHost);
+        dateLabel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_logsContainerFragment_to_calendarCardFragment);
+            }
+        });
+
     }
 
     public EditText getInputBox() {

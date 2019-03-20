@@ -17,6 +17,9 @@ import com.example.hcipartbprototype.R;
 
 import java.util.ArrayList;
 
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,9 +73,11 @@ public class LogsContainerFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         logEntryCardFragments = new ArrayList<>();
+        //TMP-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         for (int i = 0; i < 10; i++) {
             logEntryCardFragments.add(LogEntryCardFragment.newInstance());
         }
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     }
 
     @Override

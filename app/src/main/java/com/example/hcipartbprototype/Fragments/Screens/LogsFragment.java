@@ -2,6 +2,8 @@ package com.example.hcipartbprototype.Fragments.Screens;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,9 @@ import com.example.hcipartbprototype.LogEntry;
 import com.example.hcipartbprototype.R;
 
 import java.util.ArrayList;
+
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 
 /**
@@ -28,7 +33,9 @@ public class LogsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private ArrayList<LogEntry> logs;
+    private View view;
+
+
 
     public LogsFragment() {
         // Required empty public constructor
@@ -70,5 +77,16 @@ public class LogsFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_logs, container, false);
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        this.view = view;
+    }
+
+    @Nullable
+    @Override
+    public View getView() {
+        return view;
+    }
 
 }

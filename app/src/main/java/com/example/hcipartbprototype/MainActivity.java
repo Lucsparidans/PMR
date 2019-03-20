@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.hcipartbprototype.Fragments.CustomWidgets.CalendarCardFragment;
 import com.example.hcipartbprototype.Fragments.Screens.AnamnesisFragment;
 import com.example.hcipartbprototype.Fragments.Screens.AppointmentsFragment;
 import com.example.hcipartbprototype.Fragments.Screens.CaretakingFragment;
@@ -27,7 +28,7 @@ import com.example.hcipartbprototype.Fragments.Screens.MedicationFragment;
 import com.example.hcipartbprototype.Fragments.Screens.RecorderFragment;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, LogsContainerFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, LogsContainerFragment.OnFragmentInteractionListener, CalendarCardFragment.OnFragmentInteractionListener {
 
     private static final String TAG = "MainActivity";
 

@@ -3,12 +3,22 @@ package com.example.hcipartbprototype.Fragments.CustomWidgets;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CalendarView;
+import android.widget.TextView;
 
+import com.example.hcipartbprototype.Fragments.Screens.AppointmentsFragment;
 import com.example.hcipartbprototype.R;
+
+import java.text.ParseException;
+
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 
 /**
@@ -28,7 +38,9 @@ public class CalendarCardFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private TextView dateLabel;
+    private CalendarView mCalendarView;
+    private NavController navController;
     private OnFragmentInteractionListener mListener;
 
     public CalendarCardFragment() {
@@ -67,6 +79,38 @@ public class CalendarCardFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_calendar_card, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(getActivity(),R.id.logs_navHost);
+        mCalendarView = view.findViewById(R.id.calendarView);
+        dateLabel = view.findViewById(R.id.dateLabel);
+        dateLabel.setText(AppointmentsFragment.OUTPUT_FORMAT.format(mCalendarView.getDate()));
+        mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                try {
+                    dateLabel.setText(AppointmentsFragment.OUTPUT_FORMAT.format(AppointmentsFragment.INPUT_FORMAT.parse( dayOfMonth + " " + ++month + " " + year)));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        view.findViewById(R.id.calendar_confirm_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_calendarCardFragment_to_logsContainerFragment);
+            }
+        });
+        view.findViewById(R.id.calendar_cancel_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_calendarCardFragment_to_logsContainerFragment);
+            }
+        });
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
