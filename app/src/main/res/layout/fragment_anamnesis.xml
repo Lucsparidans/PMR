@@ -1,48 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/anamnesis_viewport"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Fragments.Screens.AnamnesisFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <TableLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/table_horizontal"
-        android:layout_marginRight="@dimen/table_horizontal"
-        android:stretchColumns="1">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="1dp"
+            app:cardElevation="3dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="5dp">
 
-            <TextView
-                android:gravity="start"
-                android:padding="3dip"
-                android:text="What is your name?" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <TextView
-                android:gravity="center_horizontal"
-                android:padding="3dip"
-                android:text="Test!" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/anamnesis1_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Psychotic"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-        <TableRow>
+                <TextView
+                    android:id="@+id/anamnesis1_descr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Person suffers from drug induced psychosis" />
 
-            <TextView
-                android:gravity="start"
-                android:padding="3dip"
-                android:text="Row 2?" />
+            </LinearLayout>
 
-            <TextView
-                android:gravity="center_horizontal"
-                android:padding="3dip"
-                android:text="Yee" />
-        </TableRow>
-    </TableLayout>
+        </android.support.v7.widget.CardView>
 
-</LinearLayout>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="1dp"
+            app:cardElevation="3dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/anamnesis2_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Diabetic"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/anamnesis2_descr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Person has type 1 diabetus" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
