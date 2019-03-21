@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/logsContainerFragment"
-        android:name="com.example.hcipartbprototype.Fragments.Screens.LogsContainerFragment"
+        android:name="com.example.hcipartbprototype.Fragments.CustomWidgets.LogsContainerFragment"
         android:label="fragment_logs_container"
         tools:layout="@layout/fragment_logs_container" >
         <action

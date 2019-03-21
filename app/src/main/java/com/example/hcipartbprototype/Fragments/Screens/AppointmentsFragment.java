@@ -1,6 +1,7 @@
 package com.example.hcipartbprototype.Fragments.Screens;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -69,6 +70,8 @@ public class AppointmentsFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        Activity activity = getActivity();
+        activity.setTitle("Appointments");
         mCalendarView = (CalendarView) view.findViewById(R.id.calendarView);
         dateLabel = (TextView) view.findViewById(R.id.dateLabel);
         dateLabel.setText(OUTPUT_FORMAT.format(mCalendarView.getDate()));

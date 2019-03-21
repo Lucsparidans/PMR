@@ -22,7 +22,7 @@ import com.example.hcipartbprototype.Fragments.Screens.AnamnesisFragment;
 import com.example.hcipartbprototype.Fragments.Screens.AppointmentsFragment;
 import com.example.hcipartbprototype.Fragments.Screens.CaretakingFragment;
 import com.example.hcipartbprototype.Fragments.Screens.HomeFragment;
-import com.example.hcipartbprototype.Fragments.Screens.LogsContainerFragment;
+import com.example.hcipartbprototype.Fragments.CustomWidgets.LogsContainerFragment;
 import com.example.hcipartbprototype.Fragments.Screens.LogsFragment;
 import com.example.hcipartbprototype.Fragments.Screens.MedicationFragment;
 import com.example.hcipartbprototype.Fragments.Screens.RecorderFragment;

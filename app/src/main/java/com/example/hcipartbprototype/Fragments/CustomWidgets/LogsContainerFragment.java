@@ -1,4 +1,4 @@
-package com.example.hcipartbprototype.Fragments.Screens;
+package com.example.hcipartbprototype.Fragments.CustomWidgets;
 
 import android.content.Context;
 import android.net.Uri;
@@ -12,13 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.hcipartbprototype.Fragments.CustomWidgets.LogEntryCardFragment;
 import com.example.hcipartbprototype.R;
 
 import java.util.ArrayList;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 
 /**
