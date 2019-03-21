@@ -1,48 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recorder_viewport"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".Fragments.Screens.RecorderFragment">
+    tools:context=".Fragments.Screens.RecorderFragment" >
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="136dp"
+        android:layout_height="126dp"
+        android:layout_marginTop="150dp"
+        android:src="@android:drawable/ic_btn_speak_now"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/table_horizontal"
-        android:layout_marginRight="@dimen/table_horizontal"
-        android:stretchColumns="1">
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton">
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <TextView
-                android:gravity="start"
-                android:padding="3dip"
-                android:text="What is your name?" />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="1dp"
+                app:cardElevation="2dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="5dp">
 
-            <TextView
-                android:gravity="center_horizontal"
-                android:padding="3dip"
-                android:text="Test!" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/rec1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recording1" />
+            </android.support.v7.widget.CardView>
 
-        <TableRow>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="1dp"
+                app:cardElevation="2dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="5dp">
 
-            <TextView
-                android:gravity="start"
-                android:padding="3dip"
-                android:text="Row 2?" />
+                <TextView
+                    android:id="@+id/rec2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recording2" />
+            </android.support.v7.widget.CardView>
 
-            <TextView
-                android:gravity="center_horizontal"
-                android:padding="3dip"
-                android:text="Yee" />
-        </TableRow>
-    </TableLayout>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="1dp"
+                app:cardElevation="2dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="5dp">
 
-</LinearLayout>
+                <TextView
+                    android:id="@+id/rec3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recording3" />
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
