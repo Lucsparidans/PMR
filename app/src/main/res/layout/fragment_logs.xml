@@ -5,9 +5,10 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".LogsFragment">
+    tools:context=".Fragments.Screens.LogsFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="@dimen/activity_vertical_margin" />
@@ -37,49 +38,13 @@
 
     </android.support.constraint.ConstraintLayout>
 
-    <LinearLayout
+    <fragment
+        android:id="@+id/logs_navHost"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/logs_nav_graph" />
 
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="1dp"
-            app:cardElevation="5dp"
-            app:cardPreventCornerOverlap="false"
-            app:cardUseCompatPadding="true"
-            app:contentPadding="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/log_1_title"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-                <TextView
-                    android:id="@+id/log1_date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/logs_1_date"
-                    />
-
-                <EditText
-                    android:id="@+id/log1_content"
-                    style="@style/Base.Widget.MaterialComponents.TextInputEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/log_1_content"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-    </LinearLayout>
 
 </LinearLayout>

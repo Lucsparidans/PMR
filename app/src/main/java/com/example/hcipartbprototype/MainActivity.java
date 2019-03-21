@@ -1,5 +1,6 @@
 package com.example.hcipartbprototype;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -11,18 +12,23 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.List;
+import com.example.hcipartbprototype.Fragments.CustomWidgets.CalendarCardFragment;
+import com.example.hcipartbprototype.Fragments.Screens.AnamnesisFragment;
+import com.example.hcipartbprototype.Fragments.Screens.AppointmentsFragment;
+import com.example.hcipartbprototype.Fragments.Screens.CaretakingFragment;
+import com.example.hcipartbprototype.Fragments.Screens.HomeFragment;
+import com.example.hcipartbprototype.Fragments.Screens.LogsContainerFragment;
+import com.example.hcipartbprototype.Fragments.Screens.LogsFragment;
+import com.example.hcipartbprototype.Fragments.Screens.MedicationFragment;
+import com.example.hcipartbprototype.Fragments.Screens.RecorderFragment;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, LogsContainerFragment.OnFragmentInteractionListener, CalendarCardFragment.OnFragmentInteractionListener {
 
     private static final String TAG = "MainActivity";
 
@@ -41,26 +47,6 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, "TOBE IMPLEMENTED, this will let you edit all entries", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                List<Fragment> fragments = getSupportFragmentManager().getFragments();
-                if(fragments != null){
-                    EditText editText = (EditText)findViewById(R.id.log1_content);
-                    if(!edit) {
-                        editText.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
-                        edit = true;
-                    }
-                    else{
-                        editText.setInputType(InputType.TYPE_NULL);
-                        edit = false;
-                    }
-                }
-            }
-        });
-
-        TextView dateLabel = (TextView) findViewById(R.id.log1_date);
-        dateLabel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
             }
         });
 
@@ -74,7 +60,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction()
-                .replace(R.id.viewport,HomeFragment.newInstance(null,null))
+                .replace(R.id.viewport, HomeFragment.newInstance(null,null))
                 .addToBackStack(null);
         fragmentTransaction.commit();
 
@@ -153,4 +139,8 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }
